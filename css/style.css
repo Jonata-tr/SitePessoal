@@ -1,0 +1,86 @@
+:root {
+    ---clr-neon: #00D7FF;
+    ---clr-bg: #1b202e;
+}
+
+body {
+    background-color: var(---clr-bg);
+    overflow: hidden;
+}
+
+.starterDiv {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+#starter{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 4rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(---clr-neon);
+    border: var(---clr-neon) 4px solid;
+    border-radius: 2rem;
+    padding: 25px 40px;
+
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 
+    0 0 0.5em 0 var(---clr-neon),
+    inset 0 0 0.5em 0 var(---clr-neon);
+
+    text-shadow:
+        0 0 0.25em rgba(255, 255, 255, 0.759),
+        0 0 0.28em var(---clr-neon);
+
+    position: relative;
+    transition: background-color 800ms linear;
+}
+
+#starter:before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background-color: var(---clr-neon);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translatey(120%) perspective(2rem) rotatex(30deg)
+    scale(1, 0.37);
+    filter: blur(2rem);
+    opacity: 0.4;
+	transition: 800ms;
+}
+
+#starter::after {
+    border-radius: 2rem;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 3em 0.7em var(---clr-neon);
+    opacity: 0;
+    transition: 800ms;
+
+}
+
+#starter:hover,
+#starter:focus {
+    background-color: var(---clr-neon);
+    color: var(---clr-bg);
+    text-shadow: none;
+}
+
+#starter:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 1rem 1rem var(---clr-neon);
+}
+#starter:hover::after {
+    opacity: 1;
+}
+
+/*********************** FIM DO BUTÃO INICIAR *********************/
+
